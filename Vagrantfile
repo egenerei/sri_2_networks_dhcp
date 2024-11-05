@@ -1,9 +1,13 @@
 #function to create the clients
-def create_client(config, name, network_name)
+def create_client(config, name, network_name, mac_address = nil)
   config.vm.define name do |client|
-    client.vm.network "private_network",
+    network_options = {
       type: "dhcp",
       virtualbox__intnet: network_name
+    }
+    network_options[:mac] = mac_address if mac_address  # Set MAC address if provided
+
+    client.vm.network "private_network", network_options
   end
 end
 
