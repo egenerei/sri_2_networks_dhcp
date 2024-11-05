@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   #server
   config.vm.define "server" do |dhcp|
     dhcp.vm.network  "private_network",
-     ip: "192.168.5.10"
+     ip: "192.168.56.10"
     dhcp.vm.network  "private_network",
      ip: "192.168.10.1",
      virtualbox__intnet: "intnet1"
