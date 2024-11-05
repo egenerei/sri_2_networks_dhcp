@@ -13,7 +13,8 @@ Vagrant.configure("2") do |config|
   config.vm.box = "debian/bookworm64"
   #server
   config.vm.define "server" do |dhcp|
-    dhcp.vm.network  "public_network"
+    dhcp.vm.network  "private_network",
+     ip: "192.168.5.10"
     dhcp.vm.network  "private_network",
      ip: "192.168.10.1",
      virtualbox__intnet: "intnet1"
@@ -30,9 +31,7 @@ Vagrant.configure("2") do |config|
       cp -v /vagrant/shared/dhcp_settings/dhcpd.conf /etc/dhcp/
       systemctl restart isc-dhcp-server
       script
-
-
-      
+ 
   end
   # create_client(config, "client1.1", "intnet1")
   # create_client(config, "client1.2", "intnet1")
