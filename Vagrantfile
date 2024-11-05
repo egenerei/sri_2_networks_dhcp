@@ -37,11 +37,11 @@ Vagrant.configure("2") do |config|
       script
  
   end
-  create_client(config, "client1.1", "intnet1")
-  # create_client(config, "client1.2", "intnet1")
-  # create_client(config, "client1.3", "intnet1")
-  create_client(config, "client2.1", "intnet2")
-  # create_client(config, "client2.2", "intnet2")
-  # create_client(config, "client2.3", "intnet2")
+  create_client(config, "PC-10", "intnet1","001AA0E8C239")
+  # create_client(config, "PC-11", "intnet1","001AA0E6094A")
+  # create_client(config, "PC-12", "intnet1")
+  create_client(config, "PC-13", "intnet2","001AA0E5F5D2")
+  # create_client(config, "PC-14", "intnet2","001AA0E906CF")
+  # create_client(config, "PC-15", "intnet2")
 
 end
