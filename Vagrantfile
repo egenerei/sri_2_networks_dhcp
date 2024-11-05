@@ -24,10 +24,15 @@ Vagrant.configure("2") do |config|
       apt-get update
       apt-get upgrade -y
       apt-get install isc-dhcp-server -y
+      script
+    dhcp.vm.provision "shell",name: "dhcp_conf", inline: <<-script
       cp -v /vagrant/shared/dhcp_settings/isc-dhcp-server /etc/default/ 
       cp -v /vagrant/shared/dhcp_settings/dhcpd.conf /etc/dhcp/
       systemctl restart isc-dhcp-server
       script
+
+
+      
   end
   # create_client(config, "client1.1", "intnet1")
   # create_client(config, "client1.2", "intnet1")
