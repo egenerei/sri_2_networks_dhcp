@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
      ip: "192.168.10.1",
      virtualbox__intnet: "intnet1"
     dhcp.vm.network  "private_network",
-      ip: "192.168.10.2",
+      ip: "192.168.20.1",
       virtualbox__intnet: "intnet2"
     dhcp.vm.provision "shell", inline: <<-script
       apt-get update
