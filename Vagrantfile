@@ -27,8 +27,8 @@ Vagrant.configure("2") do |config|
       apt-get install isc-dhcp-server -y
       script
     dhcp.vm.provision "shell",name: "dhcp_conf", inline: <<-script
-      cp -v /vagrant/shared/dhcp_settings/isc-dhcp-server /etc/default/ 
-      cp -v /vagrant/shared/dhcp_settings/dhcpd.conf /etc/dhcp/
+      cp -v /vagrant/isc-dhcp-server /etc/default/ 
+      cp -v /vagrant/dhcpd.conf /etc/dhcp/
       systemctl restart isc-dhcp-server
       script
  
