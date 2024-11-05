@@ -1,4 +1,3 @@
-#function to create the clients
 def create_client(config, name, network_name, mac_address = nil)
   config.vm.define name do |client|
     if mac_address
@@ -11,10 +10,12 @@ def create_client(config, name, network_name, mac_address = nil)
         type: "dhcp", 
         virtualbox__intnet: network_name
     end
+    client.vm.provision "shell", name: "dhcp_request", inline: <<-script
+      dhclient eth1 -r -v
+      dhclient eth1 -v
+    script
   end
 end
-
-
 
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/bookworm64"
