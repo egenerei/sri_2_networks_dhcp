@@ -33,10 +33,10 @@ Vagrant.configure("2") do |config|
       script
  
   end
-  # create_client(config, "client1.1", "intnet1")
+  create_client(config, "client1.1", "intnet1")
   # create_client(config, "client1.2", "intnet1")
   # create_client(config, "client1.3", "intnet1")
-  # create_client(config, "client2.1", "intnet2")
+  create_client(config, "client2.1", "intnet2")
   # create_client(config, "client2.2", "intnet2")
   # create_client(config, "client2.3", "intnet2")
 

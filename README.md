@@ -33,4 +33,4 @@ The clients are created using a function to streamline the setup of multiple mac
 2. **Clone the Repository**:
    ```bash
    git clone https://github.com/egenerei/sri_2_networks_dhcp.git
-   cd your-repo
+   cd sri_2_networks_dhcp
