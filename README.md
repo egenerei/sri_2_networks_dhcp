@@ -32,5 +32,5 @@ The clients are created using a function to streamline the setup of multiple mac
 1. **Install Vagrant**: Ensure [Vagrant](https://www.vagrantup.com/downloads) is installed on your system.
 2. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/egenerei/sri_2_networks_dhcp.git
    cd your-repo
