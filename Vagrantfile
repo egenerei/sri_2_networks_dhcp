@@ -1,9 +1,15 @@
 #function to create the clients
 def create_client(config, name, network_name, mac_address = nil)
   config.vm.define name do |client|
-    client.vm.network :private_network, type: "dhcp", intnet: network_name
-    client.vm.provider "virtualbox" do |vb|
-      vb.customize ["modifyvm", :id, "--macaddress1", mac_address] if mac_address
+    if mac_address
+      client.vm.network :private_network,
+        type: "dhcp",
+        virtualbox__intnet: network_name, 
+        mac: mac_address
+    else
+      client.vm.network :private_network,
+        type: "dhcp", 
+        virtualbox__intnet: network_name
     end
   end
 end
